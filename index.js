@@ -30,10 +30,21 @@ class App {
       const taskContainer = document.createElement("div");
       taskContainer.classList.add("task-list__task-container");
       taskContainer.insertAdjacentText("afterbegin", `${index + 1}-- ${task}`);
+
       const btnD = taskContainer.insertAdjacentElement(
         "beforeend",
         this.createDeleteBtn(index)
       );
+      const checbtn = taskContainer.insertAdjacentElement(
+        "beforeend",
+        this.createCheckBtn()
+      );
+
+      checbtn.addEventListener("click", (e) => {
+        e.target.parentNode.style.background = "grey";
+        e.target.parentNode.dataset.check = true;
+      });
+
       btnD.addEventListener("click", (e) => {
         this.tasksArr.splice(+e.target.dataset.index, 1);
         console.log(this.tasksArr);
@@ -48,6 +59,13 @@ class App {
     deleteBtn.classList.add("delete-btn");
     deleteBtn.dataset.index = index;
     return deleteBtn;
+  };
+  createCheckBtn = (index) => {
+    const checkBtn = document.createElement("button");
+    checkBtn.textContent = "J";
+    checkBtn.classList.add("check-btn");
+    checkBtn.dataset.index = index;
+    return checkBtn;
   };
 }
 
