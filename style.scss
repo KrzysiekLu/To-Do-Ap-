@@ -1,0 +1,66 @@
+:root {
+  --main-background: rgb(29, 28, 28);
+  --borders: rgb(165, 165, 165);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  background-color: rgb(29, 28, 28);
+  padding: 1rem;
+  display: block;
+  &__add-task {
+    margin-bottom: 10px;
+    &__input {
+      border: var(--borders) 2px solid;
+      background-color: var(--main-background);
+      text-align: center;
+      height: 2rem;
+      color: white;
+    }
+    &__btn {
+      height: 2rem;
+      padding: 0 1rem;
+      margin-left: 1rem;
+    }
+  }
+  .app__task-list .task-list {
+    width: 100%;
+    color: white;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    &__task-container {
+      width: 100%;
+      color: white;
+      padding: 10px 301px;
+      border-bottom: 2px solid grey;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .delete-btn {
+        color: white;
+        background: none;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: none;
+        border-radius: 100%;
+      }
+    }
+  }
+  &__task {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+}

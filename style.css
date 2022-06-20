@@ -1,0 +1,92 @@
+:root {
+  --main-background: rgb(29, 28, 28);
+  --borders: rgb(165, 165, 165);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  background-color: #1d1c1c;
+  padding: 1rem;
+  display: block;
+}
+
+.app__add-task {
+  margin-bottom: 10px;
+}
+
+.app__add-task__input {
+  border: var(--borders) 2px solid;
+  background-color: var(--main-background);
+  text-align: center;
+  height: 2rem;
+  color: white;
+}
+
+.app__add-task__btn {
+  height: 2rem;
+  padding: 0 1rem;
+  margin-left: 1rem;
+}
+
+.app .app__task-list .task-list {
+  width: 100%;
+  color: white;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app .app__task-list .task-list__task-container {
+  width: 100%;
+  color: white;
+  padding: 10px 301px;
+  border-bottom: 2px solid grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .app__task-list .task-list__task-container .delete-btn {
+  color: white;
+  background: none;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 100%;
+}
+
+.app__task {
+  width: 100%;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+/*# sourceMappingURL=style.css.map */
