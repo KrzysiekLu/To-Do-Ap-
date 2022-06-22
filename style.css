@@ -35,6 +35,42 @@
   margin-left: 1rem;
 }
 
+.app__add-task .catagory {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 10px;
+}
+
+.app__add-task .catagory__button {
+  background: none;
+  border: none;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+}
+
+.app__add-task .catagory__button img {
+  width: 30px;
+  height: 30px;
+}
+
+.app__add-task .catagory__button:hover {
+  -webkit-box-shadow: 0 0 20px -5px black;
+          box-shadow: 0 0 20px -5px black;
+}
+
 .app .tasks-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,6 +121,23 @@
 .app .tasks-list__task .buttons .button,
 .app .tasks-list .task__buttons .button,
 .app .tasks-list .task .buttons .button {
-  padding: 0.1rem 1rem;
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.app .tasks-list__task__buttons .button-img,
+.app .tasks-list__task .buttons .button-img,
+.app .tasks-list .task__buttons .button-img,
+.app .tasks-list .task .buttons .button-img {
+  height: 35px;
+  width: 35px;
+}
+
+.app .tasks-list--done {
+  margin-top: 100px;
+  height: 400px;
 }
 /*# sourceMappingURL=style.css.map */

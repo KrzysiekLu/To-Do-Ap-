@@ -13,17 +13,52 @@
       <div class="app__add-task">
         <input class="app__add-task__input" type="text" />
         <button class="app__add-task__btn">Add</button>
+        <div class="app__add-task__category catagory">
+          <button
+            class="catagory__button catagory__button-work"
+            data-category="work"
+          >
+            <img src="sources/img/icons/work-icon.svg" alt="" />
+          </button>
+          <button
+            class="catagory__button catagory__button-lerning"
+            data-category="learning"
+          >
+            <img src="learning-icon copy.svg" alt="" />
+          </button>
+          <button
+            class="catagory__button catagory__button-sport"
+            data-category="sport"
+          >
+            <img src="sources/img/icons/sport-icon.svg" alt="" />
+          </button>
+          <button
+            class="catagory__button catagory__button-home"
+            data-category="home"
+          >
+            <img src="sources/img/icons/home-icon.png" alt="" />
+          </button>
+        </div>
       </div>
       <div class="app__tasks-list tasks-list">
         <!-- <div class="tasks-list__task .task">
           <span class="task__index">1</span
           ><span class="task__text">Zadanie</span>
           <div class="task__buttons buttons">
-            <button class="buttons__check-button button">L</button>
-            <button class="buttons__delete-button button">X</button>
+            <button class="buttons__check-button button">
+              <img class="button-img" src="sources/img/check-icon.svg" alt="" />
+            </button>
+            <button class="buttons__delete-button button">
+              <img
+                class="button-img"
+                src="sources/img/delete-icon.svg"
+                alt=""
+              />
+            </button>
           </div>
         </div> -->
       </div>
+      <div class="app__tasks-list tasks-list--done">DONE</div>
     </main>
   </body>
 </html>
