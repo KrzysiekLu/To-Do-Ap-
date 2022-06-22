@@ -1,12 +1,24 @@
 class App {
   htmlElements = {
+    taskList: document.querySelector(".app__tasks-list"),
     input: document.querySelector(".app__add-task__input"),
-    taskList: document.querySelector(".app__task-list"),
+    tasksList: document.querySelector(".app__tasks-list"),
     addTaskBtn: document.querySelector(".app__add-task__btn"),
   };
   tasksArr = [];
 
   constructor() {
+    this.init();
+  }
+
+  init() {
+    //
+    this.htmlElements.taskList.addEventListener("click", (e) => {
+      let index = e.target.dataset.index;
+      if (e.target.classList.contains("buttons__delete-button")) {
+        this.deleteTask(index);
+      }
+    });
     this.htmlElements.addTaskBtn.addEventListener("click", () => {
       this.addTask();
       this.renderTasks();
@@ -24,49 +36,32 @@ class App {
     return task.charAt(0).toUpperCase() + task.slice(1);
   }
 
+  createTaskElement(taskText, index) {
+    const taskHtlm = `<div class="tasks-list__task .task">
+          <span class="task__index">${index + 1}</span
+          ><span class="task__text">${taskText}</span>
+          <div class="task__buttons buttons">
+            <button class="buttons__check-button button"data-index="${index}">L</button>
+            <button class="buttons__delete-button button"data-index="${index}">X</button>
+          </div>
+        </div>`;
+    return taskHtlm;
+  }
+
   renderTasks() {
-    this.htmlElements.taskList.textContent = "";
+    this.htmlElements.tasksList.textContent = "";
     this.tasksArr.forEach((task, index) => {
-      const taskContainer = document.createElement("div");
-      taskContainer.classList.add("task-list__task-container");
-      taskContainer.insertAdjacentText("afterbegin", `${index + 1}-- ${task}`);
-
-      const btnD = taskContainer.insertAdjacentElement(
+      this.htmlElements.tasksList.insertAdjacentHTML(
         "beforeend",
-        this.createDeleteBtn(index)
+        this.createTaskElement(task, index)
       );
-      const checbtn = taskContainer.insertAdjacentElement(
-        "beforeend",
-        this.createCheckBtn()
-      );
-
-      checbtn.addEventListener("click", (e) => {
-        e.target.parentNode.style.background = "grey";
-        e.target.parentNode.dataset.check = true;
-      });
-
-      btnD.addEventListener("click", (e) => {
-        this.tasksArr.splice(+e.target.dataset.index, 1);
-        console.log(this.tasksArr);
-        this.renderTasks();
-      });
-      this.htmlElements.taskList.append(taskContainer);
     });
   }
-  createDeleteBtn = (index) => {
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "X";
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.dataset.index = index;
-    return deleteBtn;
-  };
-  createCheckBtn = (index) => {
-    const checkBtn = document.createElement("button");
-    checkBtn.textContent = "J";
-    checkBtn.classList.add("check-btn");
-    checkBtn.dataset.index = index;
-    return checkBtn;
-  };
+
+  deleteTask(indexOfTask) {
+    this.tasksArr.splice(indexOfTask, 1);
+    this.renderTasks();
+  }
 }
 
 const newApp = new App();

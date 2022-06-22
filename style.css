@@ -12,7 +12,7 @@
 
 .app {
   width: 100vw;
-  background-color: #1d1c1c;
+  background-color: #c98787;
   padding: 1rem;
   display: block;
 }
@@ -35,10 +35,7 @@
   margin-left: 1rem;
 }
 
-.app .app__task-list .task-list {
-  width: 100%;
-  color: white;
-  background: red;
+.app .tasks-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,47 +43,48 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
-.app .app__task-list .task-list__task-container {
+.app .tasks-list__task,
+.app .tasks-list .task {
   width: 100%;
-  color: white;
-  padding: 10px 301px;
-  border-bottom: 2px solid grey;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
 }
 
-.app .app__task-list .task-list__task-container .delete-btn {
-  color: white;
-  background: none;
-  height: 50px;
-  width: 50px;
+.app .tasks-list__task__index,
+.app .tasks-list .task__index {
+  margin-right: 1rem;
+}
+
+.app .tasks-list__task__buttons,
+.app .tasks-list__task .buttons,
+.app .tasks-list .task__buttons,
+.app .tasks-list .task .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  border: none;
-  border-radius: 100%;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
-.app__task {
-  width: 100%;
-  color: white;
-  padding: 10px;
-  text-align: left;
+.app .tasks-list__task__buttons .button,
+.app .tasks-list__task .buttons .button,
+.app .tasks-list .task__buttons .button,
+.app .tasks-list .task .buttons .button {
+  padding: 0.1rem 1rem;
 }
 /*# sourceMappingURL=style.css.map */
